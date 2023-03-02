@@ -82,3 +82,59 @@ subprojects {
         }
     }
 }
+
+//application {
+//    mainClassName = "com.kaspersky.test_server.MainKt"
+//    applicationName = "desktop"
+//}
+
+//task.findByType.n
+//jar {
+////    manifest {
+////        attributes(
+////            'Main-Class': 'com.kaspersky.test_server.MainKt'
+////        )
+////    }
+//    from {
+//        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+//    }
+//}
+
+//val fatJar = task("fatJar", type = Jar::class) {
+//    baseName = "${project.name}-fat"
+//    manifest {
+//        attributes["Implementation-Title"] = "Gradle Jar File Example"
+//        attributes["Implementation-Version"] = version
+//        attributes["Main-Class"] = "com.mkyong.DateUtils"
+//    }
+//    configurations.cla
+//    from(configurations.runtimeClasspath.get().map({ if (it.isDirectory) it else zipTree(it) }))
+//    with(tasks.jar.get() as CopySpec)
+//}
+//
+//tasks {
+//    "build" {
+//        dependsOn(fatJar)
+//    }
+//}
+
+//kotlin {
+//    jvm {
+//        compilations {
+//            val main = getByName("main")
+//            tasks {
+//                register<Jar>("fatJar") {
+//                    group = "application"
+//                    manifest {
+//                        attributes["Implementation-Title"] = "Gradle Jar File Example"
+//                        attributes["Implementation-Version"] = archiveVersion
+//                        attributes["Main-Class"] = "[[mainClassPath]]"
+//                    }
+//                    archiveBaseName.set("${project.name}-fat")
+//                    from(main.output.classesDirs, main.compileDependencyFiles)
+//                    with(jar.get() as CopySpec)
+//                }
+//            }
+//        }
+//    }
+//}
